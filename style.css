@@ -1,0 +1,185 @@
+* {
+	box-sizing: border-box;
+}
+html, body{
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+}
+
+p {
+	padding: 0px;
+	margin: 0px;
+	font-family: arial;
+}
+
+body {
+	background: url("Assets/empty.png") repeat;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#container {
+	background: url("Assets/background.png") repeat top left;
+	padding: 64px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	min-height: 64px;
+	height: 64px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.row div {
+	width: 64px;
+	height: 64px;
+	background-image: url("Assets/empty.png");
+}
+
+
+.row .wall {
+	background-image: url("Assets/background.png");
+}
+
+.row .player {
+	background-image: url("Assets/link.png");
+}
+
+.row .goal {
+	background-image: url("Assets/triforce.png");
+}
+
+.row .gameWon {
+	background-image: url("Assets/endGame.png");
+}
+
+
+@media screen and (max-width: 950px){
+	body {
+		flex-direction: column;
+	}
+
+	#container {
+		padding: 32px;
+		background: url("Assets/background-mini.png") repeat top left;
+	}
+	.row {
+		min-height: 32px;
+		height: 32px;
+	}
+	.row div {
+		min-width: 32px;
+		width: 32px;
+		min-height: 32px;
+		height: 32px;
+	}
+
+	.row .wall {
+		background-image: url("Assets/background-mini.png");
+	}
+
+	.row .player {
+		background-image: url("Assets/link-mini.png");
+	}
+
+	.row .goal {
+		background-image: url("Assets/triforce-mini.png");
+	}
+
+
+	.row .gameWon {
+		background-image: url("Assets/endGame-mini.png");
+	}
+}
+
+#inputs {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	min-width: 300px;
+	width: 300px;
+	height: 300px;
+	min-height: 300px;
+}
+
+#inputs .arrow {
+	background-image: url("Assets/arrow.png");
+	width: 100px;
+	height: 100px;
+}
+
+#inputs .arrow:hover {
+	background-image: url("Assets/arrowHover.png");
+}
+
+#left {
+	transform: rotate(270deg);
+	margin-right: 50px;
+}
+
+#right {
+	transform: rotate(90deg);
+	margin-left: 50px;
+}
+
+#inputs #up {
+	margin: 0px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+#inputs #down {
+	transform: rotate(180deg);
+	margin: 0px;
+}
+
+.error {
+	position: absolute;
+	top:0px;
+	right: 0px;
+	height: 50px;
+	min-width: 175px;
+	background-color: rgb(255, 0, 0);
+	margin: 20px;
+	margin-right: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: white;
+	animation: flash 5s;
+	animation-fill-mode: forwards;
+	line-height: 50px;
+	box-shadow: 0 0 5px black;
+	text-align: center;
+}
+
+@keyframes flash {
+  from {
+      right: -100%;
+  }
+  10% {
+      right: 0%;
+  }
+
+  90% {
+      right: 0%;
+  }
+
+  100%{
+      right: -100%;
+      display: none;
+  }
+}
